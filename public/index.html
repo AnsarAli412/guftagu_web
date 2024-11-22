@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Test</title>
+</head>
+<body>
+    <h1>WebSocket Test</h1>
+    <script>
+        const socket = new WebSocket('ws://localhost:3000'); // Your WebSocket server URL
+
+        socket.onopen = function() {
+            console.log('WebSocket connection opened.');
+            socket.send(JSON.stringify({ type: 'updateStatus', contactId: '6727ca7b8f84eeb3bd3c6e6c', status: 'online' }));
+        };
+
+        socket.onmessage = function(event) {
+            console.log('Message from server:', event.data);
+        };
+
+        socket.onclose = function() {
+            console.log('WebSocket connection closed.');
+        };
+
+        socket.onerror = function(error) {
+            console.error('WebSocket Error:', error);
+        };
+    </script>
+</body>
+</html>
