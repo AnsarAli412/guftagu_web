@@ -32,7 +32,7 @@ new SocketManager(wss);
 
 // Serve HTML file for testing WebSocket connection
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.status(200).json({"status":true,'message':"you are live"})
 });
 
 const PORT = process.env.PORT || 3000;
