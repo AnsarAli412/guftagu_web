@@ -35,8 +35,15 @@ app.get("/", (req, res) => {
     res.status(200).json({"status":true,'message':"you are live"})
 });
 
+const Test = require('./models/test');
+
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+//@Guftagu#Password old
+//Yhr87eHkCXvH4vxz
+
+//mongodb+srv://guftagu-username:@Guftagu#Password@guftagu-db.qvrh5.mongodb.net/?retryWrites=true&w=majority&appName=guftagu-db
